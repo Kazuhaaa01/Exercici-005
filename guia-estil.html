@@ -2,20 +2,123 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="estils.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Guía de Estilo</title>
+    <link rel="stylesheet" href="estils.css" /> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Guia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Poppins:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
-  	<body>
-        <!-- MENU SUPERIOR -->
-        <nav class="navbar">
-            <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="galeria.html">Galeria</a></li>
-                <li><a href="guia-estil.html">Guia</a></li>
-            </ul>    
-        </nav>  
-    </body>
+  
+  <body>
+    <nav class="navbar">
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+            <li><a href="guia-estil.html" class="active">Guía</a></li>
+        </ul>    
+    </nav>
+
+    <main class="autocenter">
+        <h1>Guía de Estilo</h1>
+        <p>Aquí tienes los colores, letras e iconos que usamos en la web.</p>
+
+        <section class="caja-guia">
+            <h2>1. Tipografía (Letras)</h2>
+            
+            <div class="fila-texto">
+                <span class="etiqueta-gris">H1 - Poppins 700</span>
+                <h1>Título Principal</h1>
+            </div>
+            <div class="fila-texto">
+                <span class="etiqueta-gris">H2 - Poppins 500</span>
+                <h2>Subtítulo de sección</h2>
+            </div>
+            <div class="fila-texto">
+                <span class="etiqueta-gris">H3 - Poppins 300</span>
+                <h3>Título pequeño</h3>
+            </div>
+            
+            <div class="fila-texto">
+                <span class="etiqueta-gris">Párrafo - Lato 400</span>
+                <p class="texto-ejemplo">
+                    Este es un ejemplo de párrafo largo para ver cómo se lee. 
+                    Tiene una altura de línea cómoda y buen contraste.
+                </p>
+            </div>
+
+            <div class="fila-texto">
+                <span class="etiqueta-gris">Prueba de alineación</span>
+                <div class="caja-alineacion">
+                    <span class="material-symbols-outlined">check_circle</span>
+                    <span>El texto y el icono están centrados.</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="caja-guia">
+            <h2>2. Iconos Material</h2>
+            <p>Diferentes tamaños, grosores y rellenos.</p>
+            
+            <div class="mis-iconos">
+                <div class="tarjeta-icono">
+                    <span class="material-symbols-outlined tamano-chico">favorite</span>
+                    <small>Chico (18px)</small>
+                </div>
+                <div class="tarjeta-icono">
+                    <span class="material-symbols-outlined tamano-grande">favorite</span>
+                    <small>Grande (48px)</small>
+                </div>
+
+                <div class="tarjeta-icono">
+                    <span class="material-symbols-outlined grosor-fino">settings</span>
+                    <small>Fino</small>
+                </div>
+                <div class="tarjeta-icono">
+                    <span class="material-symbols-outlined grosor-grueso">settings</span>
+                    <small>Grueso</small>
+                </div>
+
+                <div class="tarjeta-icono">
+                    <span class="material-symbols-outlined relleno-activo">home</span>
+                    <small>Relleno</small>
+                </div>
+            </div>
+
+            <div class="area-botones">
+                <h4>Ejemplo en botones:</h4>
+                <button class="boton-con-icono">
+                    <span class="material-symbols-outlined">download</span> Descargar
+                </button>
+            </div>
+        </section>
+
+        <section class="caja-guia">
+            <h2>3. Colores</h2>
+            <div class="tabla-colores">
+                <div class="fila-color encabezado">
+                    <div>Color</div>
+                    <div>HEX</div>
+                    <div>RGB</div>
+                    <div>HSL</div>
+                </div>
+                
+                <div class="fila-color">
+                    <div class="circulo-color verde-principal"></div>
+                    <div>#70D386</div>
+                    <div>rgb(112, 211, 134)</div>
+                    <div>hsl(133, 53%, 63%)</div>
+                </div>
+
+                <div class="fila-color">
+                    <div class="circulo-color oscuro-secundario"></div>
+                    <div>#04342B</div>
+                    <div>rgb(4, 52, 43)</div>
+                    <div>hsl(168, 85%, 11%)</div>
+                </div>
+            </div>
+        </section>
+    </main>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 /* ===== Valores predeterminados globales ===== */
 
 :root{
-  --nav-h: 40px;
+  --nav-h: 50px;
   --glass-bg: rgba(255,255,255,0.45);
   --glass-bd: rgba(255,255,255,0.6);
   --page-max: 980px;
@@ -13,7 +13,8 @@ html, body{
   font-family: poppins;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;}
+  scroll-behavior: smooth;
+}
 
 body{
 padding: 0;
@@ -62,6 +63,13 @@ margin: 0;
   transition: background-color 120ms ease, transform 80ms ease;
 }
 
+.navbar .menu a.active {
+  color: #222;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255,255,255,0.8);
+}
+
 /* ===== valores de autocentrado para el texto ===== */
 
 .autocenter {
@@ -88,6 +96,10 @@ margin: 0;
 /* ===== boton reactivo (fuente: uiverse.io) ===== */
 
 button {
+  display: flex;          
+  align-items: center;    
+  justify-content: center;
+  gap: 10px;
   width: 180px;
   height: 60px;
   border: 3px solid #70d386;
@@ -96,7 +108,7 @@ button {
   cursor: pointer;
   background: white;
   font-size: 1.2em;
-
+  
 }
 
 button:hover {
@@ -176,9 +188,165 @@ button:hover {
 }
 
 
+/* ==================== Guia =================== */
+
+/* Caja contenedora de cada sección (Tipografía, Iconos, Colores) */
+.caja-guia {
+    margin-bottom: 60px;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid white;
+}
+
+/* Etiquetas pequeñas grises (H1 - Poppins, etc.) */
+.etiqueta-gris {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* fila de texto*/
+.fila-texto {
+    margin-bottom: 25px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 15px;
+}
+
+.texto-ejemplo {
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+
+.caja-alineacion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+/* --- ICONOS --- */
+
+
+.mis-iconos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+
+.tarjeta-icono {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+.tamano-chico { font-size: 18px; }
+.tamano-grande { font-size: 48px; }
+
+.grosor-fino   { font-variation-settings: 'wght' 100; }
+.grosor-grueso { font-variation-settings: 'wght' 700; }
+.relleno-activo{ font-variation-settings: 'FILL' 1; color: #ec8c86; }
+
+
+.area-botones {
+    margin-top: 30px;
+}
+
+.boton-con-icono {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+}
+
+/* --- COLORES --- */
+
+.tabla-colores {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.fila-color {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.encabezado {
+    background: transparent;
+    font-weight: bold;
+}
+
+.circulo-color {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; 
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.verde-principal   { background-color: #70D386; }
+.oscuro-secundario { background-color: #04342B; }
+
 /* ===== Responsivo ===== */
 
 
 @media (max-width: 768px) {
 
+  /* Ajuste del menu de navegacion*/
+  .navbar {
+    justify-content: center; 
+    height: auto;           
+    padding: 10px;
+  }
+
+  .navbar .menu {
+    gap: 10px;             
+    font-size: 0.9rem;      
+  }
+
+  /* Paneles: De fila a columna */
+  .Panales-beneficios {
+    flex-direction: column; 
+    align-items: center;    
+  }
+
+  /* Menu secundario: De fila a columna */
+  .menu-secundario {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;              
+    padding-bottom: 30px;   
+  }
+
+  /* Ajustes generales*/
+  .img-bg h1 {
+    font-size: 1.8rem;      
+    padding: 0 15px;        
+  }
+  
+  .autocenter {
+    width: 90%;             
+  }
 }
