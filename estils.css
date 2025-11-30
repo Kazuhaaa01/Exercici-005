@@ -10,10 +10,10 @@
 html, body{
   background: linear-gradient(180deg, #e6f0ff 0%, #f9fbff 40%, #ffffff 100%);
   color: #222;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: poppins;
   margin: 0;
   padding: 0;
-}
+  scroll-behavior: smooth;}
 
 body{
 padding: 0;
@@ -32,7 +32,7 @@ margin: 0;
   display: flex;
   gap: 10px;
   height: var(--nav-h);
-  justify-content: space-between;
+  justify-content: flex-end;  
   padding: 0 20px;
   position: sticky;
   top: 0;
@@ -88,7 +88,7 @@ margin: 0;
 /* ===== boton reactivo (fuente: uiverse.io) ===== */
 
 button {
-  width: 150px;
+  width: 180px;
   height: 60px;
   border: 3px solid #70d386;
   border-radius: 45px;
@@ -96,7 +96,7 @@ button {
   cursor: pointer;
   background: white;
   font-size: 1.2em;
-  font-weight: 400;
+
 }
 
 button:hover {
@@ -105,4 +105,80 @@ button:hover {
   font-size: 1.0em;
 }
 
-/* =====  ===== */
+/* ===== Paneles ===== */
+
+
+.Panales-beneficios {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.panel {
+  box-sizing: border-box;
+  width: 190px;
+  height: 254px;
+  background: rgba(217, 217, 217, 0.58);
+  border: 1px solid white;
+  box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  font-weight: bolder;
+  color: black;
+}
+
+.p1 {
+  transition-timing-function: ease-in-out;
+  transition-property: transform, border, background;
+  transition-duration: 0.8s;
+}
+.p2 {
+  transition-timing-function: linear;
+  transition-property: transform ,border, background;
+  transition-duration: 0.8s;
+}
+.p3 {
+  transition-timing-function: ease;
+  transition-property: transform, border, background;
+  transition-duration: 0.8s;
+}
+
+.panel:hover {
+  border: 1px solid black;
+  transform: scale(1.05);
+  background: conic-gradient(#ec8c86,#d78191,#c1759c,#8eabcb,#7cbddb,#91c6a8,#b4d48d,#dfc17e,#ec8c86);
+}
+
+.panel:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+
+.menu-secundario {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.navbar:hover{
+  border-radius: 10px;
+  transform: translateY(-1px);
+}
+
+
+/* ===== Responsivo ===== */
+
+
+@media (max-width: 768px) {
+
+}
