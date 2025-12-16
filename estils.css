@@ -22,26 +22,39 @@ margin: 0;
 
 }
 
-/* ===== NAVBAR (efecto glass) ===== */
+/* ===== NAVBAR ===== */
 
 .navbar {
+  display: flex;
   align-items: center;
+  justify-content: space-between; 
+  
+  /*(glass effect, altura, etc.) */
   backdrop-filter: blur(10px) saturate(100%);
   background: var(--glass-bg);
   border-bottom: 1px solid var(--glass-bd);
   box-shadow: 0 2px 12px rgba(156, 153, 153, 0.06);
-  display: flex;
-  gap: 10px;
   height: var(--nav-h);
-  justify-content: flex-end;  
   padding: 0 20px;
   position: sticky;
   top: 0;
   z-index: 10000;
 }
 
+.titulo-web {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #04342B;
+  white-space: nowrap;
+}
 
-.navbar .menu{
+.titulo-web:hover {
+  color: #70d386;
+}
+
+.navbar .menu {
   display: flex;
   gap: 18px;
   list-style: none;
@@ -49,25 +62,24 @@ margin: 0;
   padding: 0;
 }
 
-.navbar .menu :hover{
-  border-radius: 10px;
-  transform: translateY(-1px);
-}
-
-.navbar .menu a{
-  border-radius: 10px;
+.navbar .menu a {
   color: #0f1932;
   font-weight: 500;
   padding: 10px 10px;
   text-decoration: none;
-  transition: background-color 120ms ease, transform 80ms ease;
+  transition: color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.navbar .menu a:hover {
+  color: #70d386;     
+  letter-spacing: 2px;  
+  background: transparent; 
 }
 
 .navbar .menu a.active {
   color: #222;
   font-weight: 700;
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255,255,255,0.8);
+  border-bottom: 2px solid #70d386; 
 }
 
 /* ===== valores de autocentrado para el texto ===== */
@@ -115,6 +127,20 @@ button:hover {
   background: #04342b;
   color: white;
   font-size: 1.0em;
+}
+
+/* ===== Menu sec ===== */
+
+.menu-secundario a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: color 0.3s ease, letter-spacing 0.3s ease; /* <--- IMPORTANTE */
+}
+
+.menu-secundario a:hover {
+  color: #70d386;
+  letter-spacing: 2px; /* <--- Las letras se separan al pasar el mouse */
 }
 
 /* ===== Paneles ===== */
