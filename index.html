@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8"/>
-        <link rel="stylesheet" href="estils.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    </head>
-        <title>Inicio</title>
-	<body>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Inicio - Transiciones</title>
+    <link rel="stylesheet" href="estils.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  </head>
+
+    <body>
         <!-- MENU SUPERIOR -->
         <nav class="navbar">
             <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html" class="active">Inicio</a></li>
                 <li><a href="galeria.html">Galeria</a></li>
                 <li><a href="guia-estil.html">Guia</a></li>
             </ul>    
@@ -22,13 +23,19 @@
 
         <header class="hero">
             <div class="img-bg">
-                <h1>Todo* tu contenido en un mismo lugar</h1>
-                <p>*Se usa "todo" desde un sentido amplio y subjetivo</p>
-                <button>Mira los planes <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#1f1f1f"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg></button>
+                <h1>Demostración transformaciones</h1>
+                <p>Con un poco de texto para que no se vea vacio :O</p>
+                <a href="#paneles" style="text-decoration: none;">
+                    <button>
+                        Paneles
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </a>
+
             </div>
         </header>
-        <div class="autocenter">
-            <section>
+        <main class="autocenter">
+            <section id="texto">
                 <h2>Contingut A</h2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -54,9 +61,9 @@
                     cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
             </section>
-        </div>
+        </main>
 
-        <div class="Panales-beneficios"> 
+        <section id="paneles" class="Panales-beneficios"> 
             <div class="panel p1">
                 <p>Presioname</p>
             </div>
@@ -66,11 +73,14 @@
             <div class="panel p3">
                 <p>Presioname</p>
             </div>
-        </div>
-        <ul class="menu-secundario">
-            <li class="sec-link">Inicio</li>
-            <li class="sec-link">Galeria</li>
-            <li class="sec-link">Guia</li>
-        </ul>
+        </section>
+
+        <footer>
+            <ul class="menu-secundario style="text-decoration: none;">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="guia-estil.html">Guia</a></li>
+            </ul>
+        </footer>
 	</body>
 </html>
