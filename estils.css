@@ -309,6 +309,139 @@ button:hover {
 .verde-principal   { background-color: #70D386; }
 .oscuro-secundario { background-color: #04342B; }
 
+/* ==================== galeria =================== */
+
+/* Cajas contenedoras */
+.caja-demo, .seccion-scroll {
+    margin: 40px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    border: 1px solid white;
+}
+
+.caja-centrada {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* --- 1. CARGADOR (Loader) --- */
+.cargador {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #ccc;       /* Borde gris claro */
+    border-bottom-color: #70d386; /* Borde verde (girando) */
+    border-radius: 50%;           /* Círculo perfecto */
+    display: inline-block;
+    box-sizing: border-box;
+    /* Animación: nombre duración tipo repetición */
+    animation: rotacion 1s linear infinite;
+}
+
+@keyframes rotacion {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- 2. OBJETO MUTANTE (Animación Compleja) --- */
+.caja-animacion {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Para que no se salga de la caja */
+}
+
+.objeto-mutante {
+    width: 60px;
+    height: 60px;
+    background-color: #ec8c86;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: white;
+    
+    /* REQUISITO: alternate (va y vuelve) e infinite */
+    animation: transformar-objeto 3s ease-in-out infinite alternate;
+}
+
+@keyframes transformar-objeto {
+    0% {
+        transform: translateX(-100px) rotate(0deg) scale(1);
+        background-color: #ec8c86; /* Rojo suave */
+        opacity: 1;
+        border-radius: 10px;
+    }
+    50% {
+        opacity: 0.5; /* Se vuelve semitransparente a la mitad */
+        transform: translateX(0px) rotate(180deg) scale(0.5); /* Se hace pequeño */
+    }
+    100% {
+        transform: translateX(100px) rotate(360deg) scale(1.2); /* Se hace grande */
+        background-color: #70d386; /* Verde */
+        opacity: 1;
+        border-radius: 50%; /* Se convierte en círculo */
+    }
+}
+
+/* --- 3. SCROLL REVEAL (Aparicion al bajar) --- */
+
+.tarjeta-aparicion {
+    background: white;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 400px;
+    text-align: center;
+    
+    /* Estado inicial (invisible) */
+    opacity: 0; 
+    /* animation-timeline vincula la animación al scroll de la página */
+    animation-timeline: view();
+    /* Rango: Empieza al asomar (entry 0%) y termina al estar al 40% dentro */
+    animation-range: entry 0% cover 40%;
+    
+    animation-fill-mode: both; /* Se queda como termina */
+}
+
+/* Diferentes animaciones según la clase */
+.efecto-izquierda { animation-name: aparecer-izquierda; }
+.efecto-zoom      { animation-name: aparecer-zoom; }
+.efecto-rotar     { animation-name: aparecer-rotar; }
+
+/* Definicion de los movimientos */
+@keyframes aparecer-izquierda {
+    from { opacity: 0; transform: translateX(-100px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes aparecer-zoom {
+    from { opacity: 0; transform: scale(0); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes aparecer-rotar {
+    from { opacity: 0; transform: rotate(-180deg) scale(0.5); }
+    to   { opacity: 1; transform: rotate(0deg) scale(1); }
+}
+
+/* FALLBACK (@supports): Para navegadores que no entiendan animation-timeline */
+@supports not (animation-timeline: view()) {
+    .tarjeta-aparicion {
+        opacity: 1; /* Hacemos que sean visibles por defecto */
+        transform: none;
+        /* Opcional: una animación simple de carga */
+        animation: entrada-simple 1s ease forwards;
+    }
+    @keyframes entrada-simple {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+}
+
 /* ===== Responsivo ===== */
 
 
